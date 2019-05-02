@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/NoeOsorio/Pokedex/issues"
   },
-  "homepage": "https://github.com/NoeOsorio/Pokedex#readme"
+  "homepage": "https://github.com/NoeOsorio/Pokedex#readme",
+  "dependencies": {
+    "csv-parse": "^4.4.1"
+  }
 }
