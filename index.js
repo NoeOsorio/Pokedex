@@ -1,4 +1,3 @@
-
 var express = require('express');
 var fs = require('fs');
 var parse = require('csv-parse');
@@ -53,6 +52,10 @@ fs.createReadStream(inputFile).pipe(parser);
 
 // This is used for a GET response
 app.get('/', function (req, res) {
+    res.send("Bienvendidos a Pokedex");
+});
+
+app.get('/pokemon', function (req, res) {
     res.send({ name: "Pikachu", type: "Electric" });
 });
 
@@ -63,13 +66,11 @@ app.get('/pokemon/:id', function (req, res) {
     var sendPokemon
     // return res.status(200).send(pokemons[5]);
     sendPokemon = searchPokemon(pokemons, pokemonID)
-    // pokemons.forEach(pokemon => {
-    //     // console.log(pokemon.id)
-    //     if (pokemon.id == pokemonID) {
-    //     //   return res.send(pokemon);
-    //         return sendPokemon = pokemon
-    //     }
-    // });
+    pokemons.forEach(pokemon => {
+        if (pokemon.id == pokemonID) {
+            return sendPokemon = pokemon
+        }
+    });
     sendPokemon ? res.send(sendPokemon) : console.log("Pokemon not found")
    
 
@@ -78,22 +79,3 @@ app.get('/pokemon/:id', function (req, res) {
 app.listen(port, function () {
     console.log(`Example app listening on port ${port}!`);
 });
-
-var searchPokemon = function (pokemons, id) {
-
-    let left = 0;
-    let right = pokemons.length - 1;
-    while (left <= right) {
-        const mid = left + Math.floor((right - left) / 2);
-        if (pokemons[mid].id == id) {
-            return pokemons[mid];
-        }
-        if (pokemons[mid].id < id) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
-    }
-    return -1;
-
-}
