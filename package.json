@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/NoeOsorio/Pokedex#readme",
   "dependencies": {
-    "csv-parse": "^4.4.1"
+    "csv-parse": "^4.4.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.19.0"
   }
 }
