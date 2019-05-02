@@ -1,0 +1,26 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Pokedex with node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoeOsorio/Pokedex.git"
+  },
+  "keywords": [
+    "Pokemon",
+    "pokedex",
+    "node",
+    "js",
+    "smartkode"
+  ],
+  "author": "Noe Osorio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NoeOsorio/Pokedex/issues"
+  },
+  "homepage": "https://github.com/NoeOsorio/Pokedex#readme"
+}
